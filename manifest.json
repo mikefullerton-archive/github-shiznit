@@ -10,11 +10,12 @@
 	"permissions": [ 
 		"https://github.com/*",
 		"https://github.paypal.com/*",
-		"storage"
+		"storage",
+		"tabs"
 	], 
 	"browser_action": {
 			"default_icon": "images/icon.png",
-		 	"default_popup": "src/popup.html",
+		 	"default_popup": "src/options.html",
 			"default_title": "Github Shiznit"
 		}, 
 	"content_scripts": [ 

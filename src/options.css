@@ -1,11 +1,16 @@
 body {
 	font-family: "Helvetica";
-	font-size: 14px;
+	font-size: 10pt;
 	padding: 10px;
+	width:  400px;
 }
 #enterprise_url {
 	width: 200px;
 }
 #enterprise_url_list {
 	padding-left:10px;
+}
+
+ul, li, h1, h2, a {
+	font-size: 10pt;
 }

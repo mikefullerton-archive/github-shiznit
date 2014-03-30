@@ -8,19 +8,23 @@ function save_options() {
 		return;
 	}
   
-  	var list = enterprise_url;
 	chrome.storage.sync.get(
 		"enterprise_url_list", 
 		function(items) {
 			// if success??
+			var list = ""
 			if(items.enterprise_url_list) {
-				list += "," + items.enterprise_url;
+				list=items.enterprise_url_list + "," + enterprise_url;
+			}
+			else {
+				list=enterprise_url;
 			}
 
 			chrome.storage.sync.set({
-				"enterprise_url_list": list,
+				"enterprise_url_list": list
 			}, 
 			function(result) {
+				document.getElementById('enterprise_url').value = ""
 				restore_options();
 			});
 		}
@@ -37,6 +41,14 @@ function clear_options() {
 	});
 }
 
+function fork_me() {
+	// alert("wtf")
+	
+	// console.log("hello")
+
+	chrome.tabs.create({'url': "https://github.com/mikefullerton/github-shiznit"});
+	// document.location.href = "https://github.com/mikefullerton/github-shiznit";
+}
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
@@ -65,6 +77,7 @@ function restore_options() {
 	document.addEventListener('DOMContentLoaded', restore_options);
 	document.getElementById('save').addEventListener('click', save_options);
 	document.getElementById('clear').addEventListener('click', clear_options);
+	document.getElementById('forkme').addEventListener('click', fork_me);
 	
 	/*
 	function saveChanges() {

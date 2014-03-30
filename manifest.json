@@ -1,0 +1,36 @@
+{
+	"manifest_version": 2, 
+	"name": "Github Shiznit", 
+	"description": "Fix some annoying shiznit on github.", 
+	"version": "1.0", 
+	"author": "Mike Fullerton",
+	"homepage_url": "http://github.com/mikefullerton/GitHubShiznit",
+	"options_page": "src/options.html",
+	
+	"permissions": [ 
+		"https://github.com/*",
+		"https://github.paypal.com/*",
+		"storage"
+	], 
+	"browser_action": {
+			"default_icon": "images/icon.png",
+		 	"default_popup": "src/popup.html",
+			"default_title": "Github Shiznit"
+		}, 
+	"content_scripts": [ 
+		{
+			"matches": [ 
+				"https://github.com/*",
+				"https://github.paypal.com/*"
+			],
+			"css": [ 
+				"src/github_shiznit.css" 
+			],
+			"js": [ 
+				"src/github_shiznit.js",
+				"src/jquery-1.11.0.js"
+			],
+			"run_at": "document_end"
+		}
+	]
+}

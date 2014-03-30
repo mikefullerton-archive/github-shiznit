@@ -4,7 +4,7 @@ GitHub Shiznit
 This is an extension for the google chrome browser. 
 
 Features:  
-1  makes github take up the entire width of your browser window  
+1. makes github take up the entire width of your browser window  
 2. support for enterprise github (sort of)  
 
 To install:  
